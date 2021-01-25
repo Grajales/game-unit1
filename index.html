@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saying Puzzle</title>
+    <link rel="stylesheet" href="style.css" >
+  
+  </head>
+  <body>
+    <div class="container">
+      <header >
+          <h1>Saying Puzzle</h1>
+      </header >
+    <div class=hamMenu> 
+      <div class="hamIcon"> 
+        <h1>&#9776;</h1>
+      </div>
+        <div class=instructions> 
+          <h2>Game instructions</h2>
+            <ul> 
+              <li>Click the one word that completes the saying </li>
+              <li> You have 30 seconds per saying </li>
+              <li> Click <span id="next"> Next </span> to bring a new saying or wait for the 30 seconds to expire</li>
+              <li> Click <span id="reset"> Reset </span> to reload the game</li>
+            </ul>
+        </div>
+    </div>
+    
+      <aside>
+        <div id="countdown"> </div>
+        <h2 class="score">  </h2>
+      </aside>
+
+      <div class="saying">
+        <h2 class="h2_title"> Saying:&nbsp&nbsp </h2>
+        <p> </p>
+      </div>
+
+      <section class="row1">
+        <span class="word" id="0"> </span>
+        <span class="word" id="1"> </span>
+        <span class="word" id="2"> </span>
+        <span class="word" id="3"> </span>
+        <span class="word" id="4"> </span>
+        <span class="word" id="5"> </span>
+      </section>
+         
+        <button class="next"> Next </button> 
+        <button class="reset"> Reset </button> 
+      
+      </div>
+  
+
+    <script src="script.js" charset="utf-8"></script>
+
+  </body>
+</html>

@@ -1,0 +1,262 @@
+
+header { grid-area: header; }
+aside { grid-area: aside; }
+.saying{ grid-area:saying;}
+.row1 { grid-area: row1; }
+.next { grid-area: next; }
+.reset{ grid-area: reset;}
+.hamMenu{grid-area: ham;}
+
+.container{
+    display:grid;
+    grid-template-areas: 
+    "header header  header header"
+    "ham saying  saying saying"
+    "aside  row1   row1  . "
+     "reset  row1   row1 next ";  
+}
+
+ body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inconsolata', monospace;
+    background-color: rgb(18, 90, 134);
+  }
+  
+  header{
+    text-align: center;
+    font-family: 'Play', sans-serif;
+    font-size: larger;
+    text-shadow: 4px 4px  midnightblue;
+  }
+  aside{
+    text-align: left;
+    font-family: 'Play', sans-serif;
+    
+    height: auto;
+    width: 50%;
+  }
+  .instructions{
+    display:none;
+    text-align: left;
+    font-family: 'Play', sans-serif;
+    height: auto;
+    width: 50%;
+  }
+  .instructions.toggleCls{
+    display:block;
+  }
+  .hamIcon{
+    margin-left: 20px; 
+    cursor: pointer;
+    font-size: 30px;
+   }
+  .saying{
+    display:inline-flex;
+   }
+
+  h1 {
+    /* font-family: 'Play', sans-serif; */
+    color: #fff;
+  }
+  h2 {
+    font-family: 'Play', sans-serif; 
+    color: #fff;
+    font-size: 24px;
+  }
+  
+  p {
+    font-size: 24px;
+    color: rgb(250, 234, 14);
+    font-family: 'Play', sans-serif; 
+    animation-duration: 5s;
+    animation-name: slidein;
+  }
+  .word {
+    display: inline-block;
+   /* display: flex; */
+   /* justify-content: space-around; */ 
+   /* position: relative; */
+   left: 35%; 
+   transform: translateX(-25%); 
+   /* flex-direction: row;  */
+   /* align-items: center;
+   justify-content: center; */
+   margin: 20px;
+   padding: 5px;
+   height: auto;
+   width: auto;
+   background-color: #fff;
+   animation: 7s linear infinite fallRotation;
+   cursor: pointer;
+ }
+.green{
+  background-color: green;
+}
+.red{
+  background-color: red;
+}
+.next{
+  
+   /* display: inline-block; */
+   padding: 0.5em 1em;
+   text-decoration: none;
+   background: #f7f7f7;
+   border-left: solid 6px #ff7c5c;
+   color: #ff7c5c;
+   font-weight: bold;
+   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+   margin-right: 25%; 
+}
+#next{
+  color: #ff7c5c;
+  background-color: white;
+}
+.reset{  
+  display: inline-block;
+  position: relative;
+  text-decoration: none;      
+  color:green;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  text-align: center;
+  background: rgb(255, 187, 0);
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.08);
+}
+#reset{
+  color: green;
+  background-color: rgb(255, 187, 0);
+}
+button{
+ padding: 10px;
+ margin: 30px;
+ font-size: 20px;
+}
+.remaining-seconds{
+  color : orange;
+  font-size: 25px;
+}
+#countdown{
+  color: white;
+  font-size: 20px;
+  text-align:left;
+  text-shadow: 1px 1px  midnightblue;
+  width:auto;
+  height:auto;
+  background-color: rgb(15, 111, 160);
+}
+.score{
+  background-color: rgb(15, 111, 160);
+  font-size: 20px;
+  text-shadow: 1px 1px  midnightblue;
+}
+
+  /*---
+   * Animations
+   --- */
+   /* Not used */
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+  
+    50% {
+      opacity: 0;
+    }
+  }
+  /* Not used */
+  @keyframes colorful-diagonal-slide {
+  
+    from {
+      left: 0;
+      top: 0;
+    }
+  
+    10% {
+      background-color: blue;
+    }
+  
+    10% {
+      background-color: green;
+    }
+  
+    25%, 75% {
+      background-color: red;
+    }
+  
+    100% {
+      left: 100px;
+      top: 100px;
+    }
+  
+  }
+   /* used in p*/
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    75% {
+      font-size: 300%;
+      margin-left: 25%;
+      width: 150%;
+    }
+  
+    to {
+      font-size: 250%;
+      margin-left: 25%;
+      width: 150%;
+      color: yellow
+    }
+  }
+
+ /* used in .word */
+  @keyframes fallRotation {
+    from {
+      transform: translateY(20%);
+    }
+    25% {
+      transform: translateY(100%);;
+    }
+    35% {
+        transform: rotate(90deg);
+    }
+    45% {
+      transform: rotate(360deg);
+    }
+    55% {
+      transform: translateY(200%);;
+    }
+    65% {
+        transform: scale(150%);;
+      }
+    75% {
+      transform: translateY(500%);;
+    }
+    to {
+      transform: translateY(1000%);
+    }
+  }
+
+@media screen and (max-width: 600px) {
+  .container{
+     grid-template-areas: 
+    "header "
+    "ham "
+    "saying "
+    "row1"
+    "next "
+    "aside "
+    "reset"  ;  
+}
+}
+
+
+
+
+ 
+  
